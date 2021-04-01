@@ -1,19 +1,17 @@
-import requests, json, warnings
+import warnings
 from ..warns import Unauthorized
+from ..util.base_request import request, default_baseURL
 
-base_url = "https://blackerz.herokuapp.com"
-
-
-def edit_bot_data(id, data):
+def edit_bot_data(id, data, **anydata):
     auth = {
         "Content-Type": "application/json",
-        "Authorization": data["v1Auth"],
-        "clientId": data["authorID"]
+        "Authorization": data["v1Auth"]
     }
     finalData = {}
     if "short_description" in data : finalData["shortDescription"] = data["short_description"]
+    if "long_description" in data : finalData["longDescription"] = data["long_description"]
     
-    data = requests.post(base_url + '/api/v1/bots/' + str(id) + "/edit", json = finalData, headers = auth)
+    data = request(url=str(anydata.get("baseURL") or default_baseURL) + '/api/v1/bots/' + str(id) + "/edit", json=finalData, headers=auth).put()
     
     if data.status_code == 401:
         warnings.warn("Bot data not found", Unauthorized)
