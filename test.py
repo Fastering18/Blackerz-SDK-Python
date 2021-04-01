@@ -1,10 +1,12 @@
-import blackerz-wrapper as blackerz
+import blackerz_wrapper as blackerz
 
-blackerz.authorize("auth v1", "bot developer id")
-your_bot = blackerz.bot("bot id")
+blackerz.authorize("V1 Auth")
+goblox = blackerz.bot("bot id or client")
 
-bot_data = your_bot.bot_data()
+bot_data = goblox.bot_data()
 print(bot_data)
 
-result = your_bot.edit_data(short_description="generated_by_python_lib")
+result = goblox.edit_data(short_description="Discord bot Goblox allow you to calculate number, moderate server, get account information from roblox, etc.")
 print(result) # boolean indicates success or not
+
+print(goblox.check_vote("775363892167573535")) # check if userid 775363892167573535 voted the bot
