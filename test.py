@@ -10,3 +10,6 @@ result = goblox.edit_data(short_description="Discord bot Goblox allow you to cal
 print(result) # boolean indicates success or not
 
 print(goblox.check_vote("775363892167573535")) # check if userid 775363892167573535 voted the bot
+
+
+print(blackerz.get_bot("717660707650273280")) # get bot data without auth

@@ -1,0 +1,4 @@
+include src/*.py
+include src/blackerz_wrapper/lib/*.py
+include src/blackerz_wrapper/lib/bot/*.py
+include src/blackerz_wrapper/lib/util/*.py

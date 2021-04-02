@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="blackerz-wrapper", # Replace with your own username
-    version="0.0.2",
+    version="0.0.25",
     author="Fastering18",
     author_email="brahmana081@gmail.com",
     description="Developer kit to interact with our API",
@@ -22,5 +22,11 @@ setuptools.setup(
     ],
     package_dir={"": "src"},
     packages=setuptools.find_packages(where="src"),
+    include_package_data=True,
     python_requires='>=2',
+    entry_points={
+        "console_scripts": [
+            "blackerz=src.blackerz_wrapper.__main__:main",
+        ]
+    },
 )
