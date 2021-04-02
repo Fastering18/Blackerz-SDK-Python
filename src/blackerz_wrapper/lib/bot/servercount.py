@@ -15,7 +15,6 @@ def upload_servercount(client, auth, **anydata):
         if result.json().error != "null": return False, result.json().error
     except Exception as keslhn:
         return False, keslhn
-    print("eea")
 
 def servercount_manager(client, auth):
-    loopThread(upload_servercount, args=(client, auth))
+    loopThread(upload_servercount, args=[client, auth])
