@@ -1,11 +1,11 @@
 import setuptools
 
-with open("README.md", "r", encoding="utf-8") as fh:
+with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
     name="blackerz-wrapper", # Replace with your own username
-    version="0.0.25",
+    version="0.0.255",
     author="Fastering18",
     author_email="brahmana081@gmail.com",
     description="Developer kit to interact with our API",
@@ -23,6 +23,7 @@ setuptools.setup(
     package_dir={"": "src"},
     packages=setuptools.find_packages(where="src"),
     include_package_data=True,
+    install_requires=["requests"],
     python_requires='>=2',
     entry_points={
         "console_scripts": [

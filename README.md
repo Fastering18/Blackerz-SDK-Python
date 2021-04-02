@@ -1,4 +1,4 @@
-# Python Blackerz API-Wrapper
+# Python Blackerz API-Wrapper ![travis status](https://api.travis-ci.org/Fastering18/Blackerz-SDK-Python.svg)  
 Python SDK for interact with our API
 
 __Example Post Bot Description__
@@ -16,6 +16,8 @@ print(result) # boolean indicates success or not
 
 print(goblox.check_vote("775363892167573535")) # check if userid 775363892167573535 voted the bot  
 ```  
+
+## Website  
 
 Get your **V1 auth** by login to our website then visit your profile, here the link  
 https://blackerz.herokuapp.com/
