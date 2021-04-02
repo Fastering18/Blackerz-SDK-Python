@@ -26,7 +26,7 @@ class request():
 
 
 class loopThread(Thread):
-    def __init__(self, functi, interval=1, args=()):
+    def __init__(self, functi, interval=1, args=[]):
         Thread.__init__(self)
         self.daemon = True
         self.function = functi
@@ -35,5 +35,5 @@ class loopThread(Thread):
         self.start()
     def run(self):
         while True:
-            self.function(self.args)
+            self.function(*self.args)
             time.sleep(self.interval)
