@@ -7,7 +7,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Install dependencies
-        run: pypi install blackerz_wrapper
+        run: pip install blackerz_wrapper
       - name: Run tests and collect coverage
         run: python3 test.py
       - name: Upload coverage to Codecov (demo)
