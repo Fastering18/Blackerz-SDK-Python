@@ -53,7 +53,7 @@ jobs:
 
       env: # Or as an environment variable
 
-        super_secret: ${{ secret.CODECOV_TOKEN }}
+        super_secret: ${{ secrets.CODECOV_TOKEN }}
 
   
  
