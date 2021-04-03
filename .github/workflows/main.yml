@@ -1,25 +1,80 @@
 name: Workflow for Codecov Action
 on: [push, pull_request]
 jobs:
-  run:
+
+  build:
+
     runs-on: ubuntu-latest
+
+    strategy:
+
+      matrix:
+
+        python-version: [3.5, 3.6, 3.7, 3.8, 3.9]
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Install dependencies
-        run: pip install blackerz_wrapper
-      - name: Run tests and collect coverage
-        run: python3 test.py
-      - name: Upload coverage to Codecov (demo)
-        uses: ./
-        with:
-          files: ./coverage/calculator/coverage-final.json,./coverage/coverage-test/coverage-final.json
-          file: ./coverage/coverage-final.json
-          flags: demo
-          name: codecov-demo
-      - name: Upload coverage to Codecov (script)
-        uses: ./
-        with:
-          files: ./coverage/script/coverage-final.json
-          flags: script
-          name: codecov-script
+
+    - uses: actions/checkout@v2
+
+      with:
+
+        ref: ${{ github.event.pull_request.head.sha }}
+
+    - name: Set up Python ${{ matrix.python-version }}
+
+      uses: actions/setup-python@v2
+
+      with:
+
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install dependencies
+
+      run: |
+
+        python -m pip install --upgrade pip
+
+        pip install blackerz_wrapper
+
+
+    - name: Test
+
+      run: python test.py
+
+
+
+
+
+    - name: Upload coverage reports to Codecov
+
+      run: |
+
+        codecov
+
+      env: # Or as an environment variable
+
+        super_secret: ${{ secret.CODECOV_TOKEN }}
+
+  
+ 
+
+
+
+
+
+   
+
+
+
+     
+
+   
+
+
+
+
+
+
+
+ 
+        super_secret:
