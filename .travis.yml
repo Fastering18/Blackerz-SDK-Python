@@ -1,14 +1,15 @@
 language: python
 python:
-  - "3.0"
   - "3.5"
   - "3.6"
   - "3.7"
   - "3.8"
   - "3.9"
+before_install:
+  - python -m pip install --upgrade pip  
 install:
-  - pip install codecov
-  - pip install blackerz_wrapper
+  - pip install codecov --use-feature=2020-resolver
+  - pip install blackerz_wrapper --use-feature=2020-resolver
 script:
   - python -m coverage run test.py
   - python -m blackerz_wrapper bot 777756503028400138
