@@ -2,11 +2,13 @@ language: python
 python:
   - "3.6"
   - "3.7"
+  - "3.8"
+  - "3.9"
 install:
-  - pip install requests
+  - pip install codecov
   - pip install blackerz_wrapper
 script:
-  - python test.py
+  - python -m coverage run test.py
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - python -m codecov
