@@ -11,7 +11,8 @@ install:
   - pip install codecov --use-feature=2020-resolver
   - pip install blackerz_wrapper --use-feature=2020-resolver
 script:
-  - make testall
+  - python -m coverage run test.py
+  - python -m blackerz_wrapper bot 777756503028400138
 
 after_success:
   - python -m codecov
