@@ -8,7 +8,7 @@ def check_voted(botId, userID, auth, **anydata):
         "Authorization": str(auth)
     }
     try:
-        result = request(url=f"{str(anydata.get('baseURL') or default_baseURL)}/api/v1/bots/{str(botId)}/votes?user={str(userID)}", headers=headers).get()
+        result = request(url="{0}/api/v1/bots/{1}/votes?user={2}".format(str(anydata.get('baseURL') or default_baseURL), str(botId), str(userID)), headers=headers).get()
         return result.json()
     except Exception as kslhn:
         return kslhn
