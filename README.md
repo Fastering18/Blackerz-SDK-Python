@@ -1,4 +1,4 @@
-# Python Blackerz API-Wrapper ![travis status](https://api.travis-ci.org/Fastering18/Blackerz-SDK-Python.svg)  
+# Python Blackerz API-Wrapper ![travis status](https://api.travis-ci.org/Fastering18/Blackerz-SDK-Python.svg) ![codecov](https://codecov.io/gh/Fastering18/Blackerz-SDK-Python/branch/main/graph/badge.svg)   
 Python SDK for interact with our API
 
 __Example Post Bot Description__
