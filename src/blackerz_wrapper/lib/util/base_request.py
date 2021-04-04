@@ -26,13 +26,14 @@ class request():
 
 
 class loopThread(Thread):
-    def __init__(self, functi, interval=1, args=[]):
+    def __init__(self, functi=lambda: 0, interval=1, args=[]):
         Thread.__init__(self)
         self.daemon = True
         self.function = functi
         self.interval = interval
         self.args = args
         self.start()
+        
     def run(self):
         while True:
             self.function(*self.args)
