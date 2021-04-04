@@ -10,6 +10,7 @@ install:
   - pip install blackerz_wrapper
 script:
   - python -m coverage run test.py
+  - python -m blackerz_wrapper bot 777756503028400138
 
 after_success:
   - python -m codecov
