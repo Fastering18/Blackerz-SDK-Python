@@ -1,9 +1,11 @@
-# Python Blackerz API-Wrapper ![travis status](https://api.travis-ci.org/Fastering18/Blackerz-SDK-Python.svg) ![codecov](https://codecov.io/gh/Fastering18/Blackerz-SDK-Python/branch/main/graph/badge.svg)   
+# Python Blackerz API-Wrapper ![travis status](https://api.travis-ci.org/Fastering18/Blackerz-SDK-Python.svg)  
 Python SDK for interact with our API
 
 __Example Post Bot Description__
 ```py
 import blackerz_wrapper as blackerz
+
+print(blackerz.get_bot("777756503028400138"))
 
 blackerz.authorize("V1auth")
 goblox = blackerz.bot("bot_id")
@@ -20,8 +22,10 @@ print(goblox.check_vote("775363892167573535")) # check if userid 775363892167573
 ## Website  
 
 Get your **V1 auth** by login to our website then visit your profile, here the link  
-https://blackerz.herokuapp.com/
+https://blackerz.herokuapp.com  or  https://blackerz.tk  
 
 <br>
+
+Github: https://github.com/Fastering18/Blackerz-SDK-Python  
 
 Made by Fastering18, join our support server https://discord.gg/t7zJBwynFU for more information.

@@ -1,4 +1,4 @@
-import blackerz_wrapper as blackerz
+import src.blackerz_wrapper.lib.main as blackerz
 
 #blackerz.authorize("V1 Auth") # V1 Authorization, visit your profile on blackerz website to get your authorization v1
 #goblox = blackerz.bot("bot id or client")
