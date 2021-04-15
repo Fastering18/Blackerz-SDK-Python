@@ -17,4 +17,4 @@ def upload_servercount(client, auth, **anydata):
         return False, keslhn
 
 def servercount_manager(client, auth):
-    loopThread(upload_servercount, args=[client, auth])
+    loopThread(upload_servercount, interval=60*60*2, args=[client, auth])
